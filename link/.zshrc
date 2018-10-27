@@ -1,5 +1,13 @@
 ## Options section
-export ZSH="/Users/benhernandez/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
+
+function is_osx() {
+  [[ "$OSTYPE" =~ ^darwin ]] || return 1
+}
+
+function is_manjaro() {
+  [[ "$(cat /etc/issue 2> /dev/null)" =~ Manjaro ]] || return 1
+}
 
 setopt correct                                                  # Auto correct mistakes
 setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
@@ -35,7 +43,10 @@ plugins=(git brew history node npm sudo web-search docker git-flow zsh-syntax-hi
 source $ZSH/oh-my-zsh.sh
 
 #NVM
-source $(brew --prefix nvm)/nvm.sh
+if (is_osx) then
+  echo "Adding NVM path from Brew"
+  source $(brew --prefix nvm)/nvm.sh
+fi
 export NVM_DIR=~/.nvm
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)

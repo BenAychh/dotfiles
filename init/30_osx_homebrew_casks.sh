@@ -22,7 +22,6 @@ casks=(
   # Applications
   docker
   google-chrome
-  zsh
   firefox
   iterm2
   slack

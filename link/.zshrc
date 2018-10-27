@@ -44,7 +44,6 @@ source $ZSH/oh-my-zsh.sh
 
 #NVM
 if (is_osx) then
-  echo "Adding NVM path from Brew"
   source $(brew --prefix nvm)/nvm.sh
 fi
 export NVM_DIR=~/.nvm

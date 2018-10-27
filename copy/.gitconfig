@@ -1,0 +1,15 @@
+[user]
+	email = benaychh@gmail.com
+	name = Ben Hernandez
+[alias]
+  br = branch
+  ci = commit
+  co = checkout
+  df = diff
+  g = grep -I
+  lg = log -p
+  pp = !"echo 'Pull'; git pull; echo 'Push'; git push"
+  rb = rbranch
+  rv = review
+  st = status
+  ksdiff = difftool -y -t Kaleidoscope

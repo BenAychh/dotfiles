@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Case-insensitive globbing (used in pathname expansion)
 setopt nocaseglob

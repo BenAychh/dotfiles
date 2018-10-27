@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Manjaro-only stuff. Abort if not Manjaro.
 is_manjaro || return 1

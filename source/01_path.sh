@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 paths=(
   ~/.local/bin
   $DOTFILES/bin

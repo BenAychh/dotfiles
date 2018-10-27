@@ -1,4 +1,6 @@
 ## Options section
+export ZSH="/Users/benhernandez/.oh-my-zsh"
+
 setopt correct                                                  # Auto correct mistakes
 setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
 setopt nocaseglob                                               # Case insensitive globbing
@@ -25,9 +27,16 @@ export VISUAL=/usr/bin/nano
 export ELECTRON_TRASH=gio                                       # Fix for VS Code not being able to delete
 export SONARQUBE_KEY=2b44259098ca4eef89c71742b057e4cd9c8d2f64
 export POWERLEVEL9K_MODE='nerdfont-complete'
+
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
-plugins=(git brew history node npm sudo web-search docker git-flow zsh-syntax-highlighting history-substring-search zsh-autosuggestions)
+plugins=(git brew history node npm sudo web-search docker git-flow zsh-syntax-highlighting zsh-autosuggestions history-substring-search)
+
+source $ZSH/oh-my-zsh.sh
+
+#NVM
+source $(brew --prefix nvm)/nvm.sh
+export NVM_DIR=~/.nvm
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
 WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
@@ -72,8 +81,6 @@ setopt prompt_subst
  #PROMPT="%(!.%{$fg[red]%}[%n@%m %1~]%{$reset_color%}# .%{$fg[green]%}[%n@%m %1~]%{$reset_color%}$ "
 # Maia prompt
 PROMPT="%B%{$fg[cyan]%}%(4~|%-1~/.../%2~|%~)%u%b >%{$fg[cyan]%}>%B%(?.%{$fg[cyan]%}.%{$fg[red]%})>%{$reset_color%}%b " # Print some system information when the shell is first started
-# Print a greeting message when shell is started
-echo $USER@$HOST  $(uname -srm) $(lsb_release -rcs)
 ## Prompt on right side:
 #  - shows status of git when in git repository (code adapted from https://techanic.net/2012/12/30/my_git_prompt_for_zsh.html)
 #  - shows exit status of previous command (if previous command finished with an error)
@@ -105,6 +112,7 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;36m'
 export LESS=-r
 
+
 # bind UP and DOWN arrow keys to history substring search
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
@@ -118,7 +126,9 @@ export NVM_DIR="$HOME/.nvm"
 
 # export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-[ -d "/opt/sonar-scanner/bin" ] && export PATH=/opt/sonar-scanner/bin:$PATH
+export PATH="/usr/local/sbin:$PATH"
+[ -d "/opt/sonar-scanner/bin" ] && export PATH=/opt/sonar-scanner/bin:$PATH;
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export DOTFILES=~/.dotfiles
 

@@ -27,6 +27,7 @@ casks=(
   slack
   spotify
   font-sourcecodepro-nerd-font-mono
+  visual-studio-code
 )
 
 # Install Homebrew casks.
@@ -36,7 +37,7 @@ if (( ${#casks[@]} > 0 )); then
   for cask in "${casks[@]}"; do
     brew cask install $cask
   done
-  brew cask cleanup
+  brew cleanup
 fi
 
 # Work around colorPicker symlink issue.

@@ -4,7 +4,7 @@ My OSX / Manjaro dotfiles.
 
 ## About this project
 
-Forked and heavily stolen from [https://github.com/cowboy/dotfiles](Cowboy's dotfiles). Modified to be a bit simpler and prefer Manjaro/Zsh/Oh-my-zsh. If you want your own version, you should definitely fork cowboy's version and not mine - his is much cleaner and mine strips a lot of this away.
+Forked and heavily stolen from [Cowboy's dotfiles](https://github.com/cowboy/dotfiles). Modified to be a bit simpler and prefer Manjaro/Zsh/Oh-my-zsh. If you want your own version, you should definitely fork cowboy's version and not mine - his is much cleaner and mine strips a lot of this away.
 
 [dotfiles]: bin/dotfiles
 
